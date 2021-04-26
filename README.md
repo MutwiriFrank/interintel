@@ -1,8 +1,31 @@
-## This is Django Login page design + code and a search + result  functionality written in Django
-###Designing
+#This is Django Login page design + code and a search + result  functionality written in Django
 
-Contents
 
+
+
+###Contents
+
+- **Designing Layouts**
+>
+- **Login**
+
+ >- Frontend
+ >- Backend
+ >- Sessions
+
+- **Search**
+
+ >- Backend
+ >- Front end
+
+- **Results**
+
+ >- Frontend
+
+- **Database**
+
+
+####Designing
 
 First started by designing the layout of the login page on a mobile phone and a desktop using figma.
  
