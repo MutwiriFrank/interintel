@@ -1,0 +1,183 @@
+{% extends 'cms/main.html' %}
+{% load static %}
+{% block content %}
+
+{% if  request.GET.q %}
+
+
+
+{%else %}
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="total-orders">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Total Orders</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{ total_orders }}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-delivered">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Orders Delivered</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{ delivered_orders_count }}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-pending">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Orders Pending</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{ pending_orders }}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="out_for_delivery">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Out for Delivery</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{ OnTransit }}</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endif %}
+
+
+<hr>
+<div class="row">
+
+	<div class="col-md-7" >
+		<div class="row " style="margin-bottom: -11px">
+			<div class="col-1">
+
+			</div>
+			<div class="col-4">
+
+			 <h5 >ORDERS</h5>
+			</div>
+
+			<div class="col-5">
+
+				<div class="search-container" >
+					<form action="{% url 'orders' %}" method="get">
+					  <input type="search" placeholder="Search for order.." name="q">
+					  <button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+
+				  </div>
+
+
+				<!--<form class="example" action="" method="get">-->
+				  <!--<input type="search" placeholder="Search for order.." name="q">-->
+				  <!--<button type="submit"><i class="fa fa-search"></i></button>-->
+				<!--</form>-->
+			</div>
+			<div class="col-2">
+				{% if 'q' %}
+			<p> <small>
+				{% with orders.count as total_orders %}
+				Found {{ total_orders }} order {{ total_orders|pluralize }}
+				{% endwith %}
+			</small>
+			</p>
+
+			{% endif %}
+			</div>
+
+		</div>
+
+		<hr>
+		<div>
+
+
+			<table class="table">
+				<tr>
+					<th></th>
+					<th>Customer</th>
+					<th>Product</th>
+					<th>Category</th>
+					<th>Quantity</th>
+					<th>Date Orderd</th>
+					<th>Status</th>
+
+				</tr>
+				{% for order in orders %}
+					<tr>
+						<td>{{forloop.counter}}</td>
+						<td><a href="">{{order.customer}}</a></td>
+						<td>
+							{{ order.product.name }}
+						</td>
+						<td>
+							{{ order.product.category }}
+						</td>
+						<td>
+							{{ order.issue_quantity }}
+						</td>
+						<td>
+							{{ order.date_created }}
+						</td>
+						<td>
+							{{ order.status }}
+						</td>
+
+
+					</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+	<div class="col-md-1" ></div>
+		<div class="col-md-4" >
+		<h5 style="text-align:center;" >Customers</h5>
+		<hr>
+		<div>
+
+
+
+			<table class="table">
+				<tr>
+					<th></th>
+					<th>Customer</th>
+
+
+				</tr>
+				{% for order in orders %}
+					<tr>
+						<td>{{forloop.counter}}</td>
+						<td><a href="">{{order.customer}}</a></td>
+
+
+					</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+
+
+</div>
+
+{% endblock %}

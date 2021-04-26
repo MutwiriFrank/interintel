@@ -1,0 +1,146 @@
+
+{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+
+}
+
+body{
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, Sans-serif;
+	color: #000;
+	background-color: #F6F5F5;
+	font-size: 15px;
+	line-height: 1.5;
+}
+a{
+	color: #262626;
+	text-decoration: none !important;
+
+}
+ul{
+	list-style: none;
+}
+
+
+
+.menu-btn{
+	cursor: pointer;
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	z-index: 10;
+	display: none;
+
+}
+
+/*------------------nav------------------------*/
+.main-nav{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 60PX;
+	padding: 20PX 0;
+	font-size: 15PX;
+
+}
+
+.logo{
+
+	margin-left: 3rem;
+}
+
+.main-nav ul{
+	display: flex;
+
+
+}
+
+.main-nav ul li{
+	padding: 0 10px;
+	margin-right: 2rem;
+}
+
+.main-nav ul li a{
+	padding-bottom: 2px;
+}
+
+.main-nav ul li a:hover {
+	border-bottom: 2px solid #2626
+
+}
+
+.main-nav ul.main-menu{
+	flex: 1;
+	margin-left: 20px;
+}
+#total-orders{
+background-color: #4cb4c7;
+}
+
+
+#orders-delivered{
+background-color: #7abecc;
+}
+
+#orders-pending{
+background-color: #7CD1C0;
+}
+
+#out_for_delivery{
+background-color: teal
+}
+
+.div_with_search{
+
+}
+
+
+.search-container {
+  float: right;
+}
+input[type=search] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.search-container button:hover {
+  background: #ccc;
+}
+
+.table{
+font-size: 13px;
+text-align: center;
+width: 95%;
+margin: auto;
+text-align: center;
+}
+
+
+/*Make alternating colors for the table rows*/
+.table tr:nth-child(odd){
+	background: #B8CAE4
+}
+
+.table tr:nth-child(even){
+	background: #dae5f4
+}
+
+th {
+  background-color: #337ab7;
+  color: white;
+}
+
+
+
