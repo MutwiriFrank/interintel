@@ -45,7 +45,7 @@ class Order(models.Model):
     note = models.CharField(max_length=200, null=True, blank=True)
 
     def __str__(self):
-        return str(self.product.name )
+        return str(self.customer )
 
 
 class OrderItem(models.Model):

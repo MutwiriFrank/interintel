@@ -1,17 +1,11 @@
 from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
 from django.contrib.postgres.search import SearchVector, SearchQuery
-from django.http import HttpResponse, request
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView
 
 from .models import OrderItem,Order,Product,Category
 from .forms import SearchForm
 # Create your views here.
 
-# this view will hep us receieve input value on the form
-# The input name is assigned to 'q' which is equal to text being searched
-
+# this view will hep us receive input value on the form
 
 def orders(request):
 
