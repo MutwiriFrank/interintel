@@ -7,6 +7,7 @@ from .forms import SearchForm
 
 # this view will hep us receive input value on the form
 
+
 def orders(request):
 
     if 'user' in request.session:
@@ -16,7 +17,6 @@ def orders(request):
 
         form = SearchForm()
         q = ""
-        orders =[]
         orders=[]
         delivered_orders=[]
         delivered_orders_count=[]
